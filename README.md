@@ -17,8 +17,8 @@ PS:今年开发的`App`基本上都是支持`iOS7`以上了，所以没太用启
 UIViewController *viewController = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateViewControllerWithIdentifier:@"LaunchScreen"];
 
 UIView *launchView = viewController.view;
-AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-UIWindow *mainWindow = delegate.window;
+UIWindow *mainWindow = [UIApplication sharedApplication].keyWindow;
+launchView.frame = [UIApplication sharedApplication].keyWindow.frame;
 [mainWindow addSubview:launchView];
 
 [UIView animateWithDuration:0.6f delay:0.5f options:UIViewAnimationOptionBeginFromCurrentState animations:^{

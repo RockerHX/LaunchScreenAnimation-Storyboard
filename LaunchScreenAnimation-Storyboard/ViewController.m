@@ -7,11 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "AppDelegate.h"
+
 
 @interface ViewController ()
-
 @end
+
 
 @implementation ViewController
 
@@ -30,9 +30,8 @@
     UIViewController *viewController = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateViewControllerWithIdentifier:@"LaunchScreen"];
     
     UIView *launchView = viewController.view;
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    UIWindow *mainWindow = delegate.window;
-    launchView.frame = mainWindow.frame;
+    UIWindow *mainWindow = [UIApplication sharedApplication].keyWindow;
+    launchView.frame = [UIApplication sharedApplication].keyWindow.frame;
     [mainWindow addSubview:launchView];
     
     [UIView animateWithDuration:1.0f delay:0.5f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
